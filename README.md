@@ -1,9 +1,33 @@
-# Singularity Registry Server
+# Singularity Registry Server - podman-compose edition
 
-[![status](https://joss.theoj.org/papers/050362b7e7691d2a5d0ebed8251bc01e/status.svg)](http://joss.theoj.org/papers/050362b7e7691d2a5d0ebed8251bc01e)
-[![GitHub actions status](https://github.com/singularityhub/sregistry/workflows/sregistry-ci/badge.svg?branch=master)](https://github.com/singularityhub/sregistry/actions?query=branch%3Amaster+workflow%3Asregistry-ci)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1012531.svg)](https://doi.org/10.5281/zenodo.1012531)
-[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8F%20%20%E2%97%8B-orange)](https://fair-software.eu)
+## What is podman-compose
+Podman-compose is the equivalent to docker-compose, using the podman container engine. It allows for the creation of rootless containers running in user namespace. For more information see https://podman.io/ and https://github.com/containers/podman-compose
+
+## What are the differences to the original Singularity Registry Server
+This version of the Singularity Registry Server is set-up to work in a non-root environment. 
+I **did not** change the code of the applications. 
+I **did** change the folder structure and the docker-compose.yml file and provide documentation to make this setup run with podman-compose. 
+This setup is in it's current configuration meant to be run with valid SSL certificates. You can change that by deactivating the corresponding settings in the docker-compose.yml and shub/settings/config.py files.
+In the end you still have to make your configurations (like setting your services addresses, renaming your instance, enabling authentication, etc.) according to the original documentation which you can find at https://singularityhub.github.io/sregistry/
+
+The differences in detail:
+* Changed the docker-compose.yml
+	* Volume paths are not taken from uwsgi directly, but are defined per service. Consquence: You don't need a nginx user on your host system anymore and don't have permissions problems after deactivating PAM again.
+	* Volume mapping for PAM files changed.
+	* Volume mapping for SSL certs changed.
+	* Volume mapping for PostgreSQL database added, so it can save data persistently without initiating a backup procedure.
+* A PAM folder with a 'shadow' file was added. You need to copy the information of configured users from your /etc/shadow into this file since rootless containers do not have access to the original.
+* A SSL directory with subdirectories was added to save and access cert files in the rootless environment.
+
+## What to do besides setting on configurations
+* You **need** to change the ownership of the sregistry/minio-images folder to the user that is used inside the minio container with the UID and GID 1.
+To do so, execute the following command inside the sregistry folder:
+```bash
+podman unshare chown -R 1:1 minio-images
+```
+* You can put your SSL cert and key into the according folders in the sregistry/ssl folder
+* You can put your user info from /etc/shadow into sregistry/PAM/shadow
+
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
