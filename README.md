@@ -19,12 +19,14 @@ The differences in detail:
 * A PAM folder with a 'shadow' file was added. You need to copy the information of configured users from your /etc/shadow into this file since rootless containers do not have access to the original.
 * A SSL directory with subdirectories was added to save and access cert files in the rootless environment.
 
-## What to do besides setting on configurations
+## What to do besides doing the usual configuration
 * You **need** to change the ownership of the sregistry/minio-images folder to the user that is used inside the minio container with the UID and GID 1.
 To do so, execute the following command inside the sregistry folder:
 ```bash
 podman unshare chown -R 1:1 minio-images
 ```
+This will change the ownership to the UID that will be used in user namespace and represents the user with UID 1 inside the minio container.
+
 * You can put your SSL cert and key into the according folders in the sregistry/ssl folder
 * You can put your user info from /etc/shadow into sregistry/PAM/shadow
 
