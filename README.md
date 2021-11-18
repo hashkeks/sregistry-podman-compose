@@ -16,7 +16,7 @@ The differences in detail:
 	* Volume mapping for PAM files changed.
 	* Volume mapping for SSL certs changed.
 	* Volume mapping for PostgreSQL database added, so it can save data persistently without initiating a backup procedure.
-* A PAM folder with a 'shadow' file was added. You need to copy the information of configured users from your /etc/shadow into this file since rootless containers do not have access to the original.
+* A PAM folder with a 'shadow' file was added. You need to copy the information of configured users from your /etc/shadow into this file since rootless containers do not have access to the original /etc/shadow.
 * A SSL directory with subdirectories was added to save and access cert files in the rootless environment.
 
 ## What to do besides doing the usual configuration
