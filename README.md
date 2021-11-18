@@ -17,7 +17,7 @@ The differences in detail:
 	* Volume mapping for SSL certs changed.
 	* Volume mapping for PostgreSQL database added, so it can save data persistently without initiating a backup procedure.
 * A PAM folder with a 'shadow' file was added. You need to copy the information of configured users from your /etc/shadow into this file since rootless containers do not have access to the original /etc/shadow.
-* A SSL directory with subdirectories was added to save and access cert files in the rootless environment.
+* An SSL directory with subdirectories was added to save and access cert files in the rootless environment.
 
 ## What to do besides doing the usual configuration
 * You **need** to change the ownership of the sregistry/minio-images folder to the user that is used inside the minio container with the UID and GID 1.
