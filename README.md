@@ -1,7 +1,7 @@
 # Singularity Registry Server - podman-compose edition
 
 ## What is podman-compose
-Podman-compose is the equivalent to docker-compose, using the podman container engine. It allows for the creation of rootless containers running in user namespace. For more information see https://podman.io/ and https://github.com/containers/podman-compose
+Podman-compose is the podman equivalent to docker-compose, using the podman container engine. It allows for the creation of rootless containers running in user namespace. For more information see https://podman.io/ and https://github.com/containers/podman-compose
 
 ## What are the differences to the original Singularity Registry Server
 This version of the Singularity Registry Server is set-up to work in a non-root environment. 
