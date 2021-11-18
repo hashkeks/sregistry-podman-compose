@@ -7,7 +7,7 @@ Podman-compose is the podman equivalent to docker-compose, using the podman cont
 This version of the Singularity Registry Server is set-up to work in a non-root environment. 
 I **did not** change the code of the applications. 
 I **did** change the folder structure and the docker-compose.yml file and provide documentation to make this setup run with podman-compose. 
-This setup is in it's current configuration meant to be run with valid SSL certificates. You can change that by deactivating the corresponding settings in the docker-compose.yml and shub/settings/config.py files.
+This setup in it's current configuration is meant to be run with valid SSL certificates. You can change that by deactivating the corresponding settings in the docker-compose.yml and shub/settings/config.py files.
 In the end you still have to make your configurations (like setting your services addresses, renaming your instance, enabling authentication, etc.) according to the original documentation which you can find at https://singularityhub.github.io/sregistry/
 
 The differences in detail:
