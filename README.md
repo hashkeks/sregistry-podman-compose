@@ -30,6 +30,7 @@ This will change the ownership to the UID that will be used in user namespace an
 * You can put your SSL cert and key into the according folders in the sregistry/ssl folder
 * You can put your user info from /etc/shadow into sregistry/PAM/shadow
 
+## The following section is taken from the original Sregistry repo itself and does not have to do with my changes.
 
 # Singularity Registry Server
 
