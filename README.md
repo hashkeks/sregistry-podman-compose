@@ -40,7 +40,7 @@ This will change the ownership to the UID that will be used in user namespace an
   </tr>
 </table>
 
-## The following section is taken from the original Sregistry repo itself and does not have to do with my changes.
+## The following section is taken from the original Sregistry repo itself and does not have to do with our changes.
 
 # Singularity Registry Server
 
