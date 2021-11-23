@@ -1,14 +1,6 @@
 # Singularity Registry Server - podman-compose edition
 
-### Who worked on this
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/hashkeks"><img src="https://avatars.githubusercontent.com/u/34633191?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cedric Casper</b></sub></a><br /><a href="https://github.com/hashkeks" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/kkaftan"><img src="https://avatars.githubusercontent.com/u/74317121?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Kaftan</b></sub></a><br /><a href="https://github.com/kkaftan" title="Code">💻</a></td>
-  </tr>
-</table>
-https://github.com/hashkeks 
-https://github.com/kkaftan
+
 
 ## What is podman-compose
 Podman-compose is the podman equivalent to docker-compose, using the podman container engine. It allows for the creation of rootless containers running in user namespace. For more information see https://podman.io/ and https://github.com/containers/podman-compose
@@ -39,6 +31,14 @@ This will change the ownership to the UID that will be used in user namespace an
 
 * You can put your SSL cert and key into the according folders in the sregistry/ssl folder
 * You can put your user info from /etc/shadow into sregistry/PAM/shadow
+
+### Who worked on this
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/hashkeks"><img src="https://avatars.githubusercontent.com/u/34633191?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cedric Casper</b></sub></a><br /><a href="https://github.com/hashkeks" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/kkaftan"><img src="https://avatars.githubusercontent.com/u/74317121?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Kaftan</b></sub></a><br /><a href="https://github.com/kkaftan" title="Code">💻</a></td>
+  </tr>
+</table>
 
 ## The following section is taken from the original Sregistry repo itself and does not have to do with my changes.
 
