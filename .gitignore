@@ -10,9 +10,10 @@ Gemfile.lock
 *.img
 sregistry
 _site
-!minio-images
+#minio-images
 minio-images/drive*/.minio.sys
 minio-images/drive*/sregistry
+!minio-images/drive*/.placeholder
 *.pem
 *.key
 !.env
