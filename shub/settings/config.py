@@ -108,7 +108,7 @@ DATABASES = {
 
 # STORAGE
 
-MINIO_SERVER = vari.MY_DOMAIN_NAME + ":9000" #"minio:9000"  # Internal to sregistry
+MINIO_SERVER = "minio:9000"  # Internal to sregistry
 MINIO_EXTERNAL_SERVER = (
         vari.MY_DOMAIN_NAME + ":9000" #"127.0.0.1:9000"  # minio server for Singularity to interact with
 )
