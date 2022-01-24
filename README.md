@@ -5,7 +5,7 @@ In ./shub/settings/variable.sh change DOMAIN value to your domain. In ./shub/set
 After creating key(private) and certifications(dhparam and pem) place them in the right files: ./ssl/certs or ./ssl/private
 In ./.env change the values of the name (default: domain_key.pem and domain_cert.pem)
 
-Delete all .placeholder (find . | grep .placeholder), there just there for the file structures.
+Delete all .placeholder (find . | grep .placeholder | xargs rm), there just there for the file structures.
 
 Have fun with your sregistry! :D
 
