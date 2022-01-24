@@ -7,6 +7,11 @@ Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed
 with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 """
+# Import domain name variable
+import sys
+sys.path.append("./variable")
+import variable as vari 
+
 
 # Python-social-auth
 
@@ -41,7 +46,7 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = "http://127.0.0.1"
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = vari.MY_DOMAIN_NAME
 
 # http://psa.matiasaguirre.net/docs/configuration/settings.html#urls-options
 # SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
