@@ -15,6 +15,7 @@ minio-images/drive*/.minio.sys
 minio-images/drive*/sregistry
 *.pem
 *.key
+!.env
 
 # Other #
 #########
