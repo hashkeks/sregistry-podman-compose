@@ -10,7 +10,7 @@ Gemfile.lock
 *.img
 sregistry
 _site
-minio-images
+#minio-images
 
 # Other #
 #########
