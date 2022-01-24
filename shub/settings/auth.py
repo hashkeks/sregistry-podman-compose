@@ -8,7 +8,7 @@ with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 """
 # Domain variable
-MY_DOMAIN_NAME = "fb3704d2-e59f-4939-8489-175fb2ad2e76.fr.bw-cloud-instance.org"
+MY_DOMAIN_NAME = ""
 # Python-social-auth
 
 AUTHENTICATION_BACKENDS = (
