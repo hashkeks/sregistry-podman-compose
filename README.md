@@ -1,4 +1,10 @@
-# Singularity Registry Server - podman-compose edition
+# Singularity Registry Server - docker-compose edition
+## QUICK GUIDE
+In /shub/settings/variable.sh change DOMAIN value to your domain. In /shub/settings/secrets.py (do a cp of dummy_secrets before) change the SECRET_KEY. In /shub/settings/config.py adjust admins, manager and help contact if needed. And also enable Plugins or Authentication possibilities.
+Afer creating key(private) and certifications(dhparam and pem) place them in the right files: /ssl/certs or /ssl/private
+In /.env change the values of the name (default: domain_key.pem and domain_cert.pem)
+
+Have fun with your sregistry! :D
 
 
 

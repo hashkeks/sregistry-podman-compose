@@ -15,7 +15,7 @@ MY_DOMAIN_NAME = "fb3704d2-e59f-4939-8489-175fb2ad2e76.fr.bw-cloud-instance.org"
 # Which social auths do you want to use?
 ENABLE_GOOGLE_AUTH = False
 ENABLE_TWITTER_AUTH = False
-ENABLE_GITHUB_AUTH = True
+ENABLE_GITHUB_AUTH = False
 ENABLE_GITLAB_AUTH = False
 ENABLE_BITBUCKET_AUTH = False
 ENABLE_GITHUB_ENTERPRISE_AUTH = False
