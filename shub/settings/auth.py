@@ -7,12 +7,8 @@ Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed
 with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 """
-# Import domain name variable
-import sys
-sys.path.append("./variable")
-import variable as vari 
-
-
+# Domain variable
+MY_DOMAIN_NAME = "fb3704d2-e59f-4939-8489-175fb2ad2e76.fr.bw-cloud-instance.org"
 # Python-social-auth
 
 AUTHENTICATION_BACKENDS = (
@@ -35,8 +31,7 @@ SOCIAL_AUTH_PIPELINE = (
     "social_core.pipeline.social_auth.social_details",
     "social_core.pipeline.social_auth.social_uid",
     "social_core.pipeline.social_auth.auth_allowed",
-    "shub.apps.users.views.social_user",
-    "shub.apps.users.views.redirect_if_no_refresh_token",
+    "shub.apps.users.views.social_user", "shub.apps.users.views.redirect_if_no_refresh_token",
     "social_core.pipeline.user.get_username",
     "social_core.pipeline.social_auth.associate_by_email",  # <--- must share same email
     "social_core.pipeline.user.create_user",
@@ -46,7 +41,7 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = vari.MY_DOMAIN_NAME
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = MY_DOMAIN_NAME
 
 # http://psa.matiasaguirre.net/docs/configuration/settings.html#urls-options
 # SOCIAL_AUTH_REDIRECT_IS_HTTPS = True

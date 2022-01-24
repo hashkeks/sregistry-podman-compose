@@ -7,10 +7,8 @@ Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed
 with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 """
-# Import domain name variable
-import sys
-sys.path.append("./variable")
-import variable as vari
+# domain name variable
+MY_DOMAIN_NAME = "fb3704d2-e59f-4939-8489-175fb2ad2e76.fr.bw-cloud-instance.org"
 
 # AUTHENTICATION
 
@@ -35,8 +33,8 @@ ENABLE_GITHUB_ENTERPRISE_AUTH = False
 ## IMPORTANT: if/when you switch to https, you need to change "DOMAIN_NAME"
 # to have https, otherwise some functionality will not work (e.g., GitHub webhooks)
 
-DOMAIN_NAME = "https://" + vari.MY_DOMAIN_NAME
-DOMAIN_NAME_HTTP = "http://" vari.MY_DOMAIN_NAME
+DOMAIN_NAME = "https://" + MY_DOMAIN_NAME
+DOMAIN_NAME_HTTP = "http://" + MY_DOMAIN_NAME
 DOMAIN_NAKED = DOMAIN_NAME_HTTP.replace("http://", "")
 
 ADMINS = (("vsochat", "@vsoch"),)
@@ -108,9 +106,9 @@ DATABASES = {
 
 # STORAGE
 
-MINIO_SERVER = "minio:9000"  # Internal to sregistry
+MINIO_SERVER = MY_DOMAIN_NAME + ":9000"#"minio:9000"  # Internal to sregistry
 MINIO_EXTERNAL_SERVER = (
-        vari.MY_DOMAIN_NAME + ":9000" #"127.0.0.1:9000"  # minio server for Singularity to interact with
+        MY_DOMAIN_NAME + ":9000" #"127.0.0.1:9000"  # minio server for Singularity to interact with
 )
 MINIO_BUCKET = "sregistry"
 MINIO_SSL = True # use SSL for minio

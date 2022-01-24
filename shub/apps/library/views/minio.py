@@ -37,11 +37,16 @@ from minio.signer import (
 import os
 import hmac
 import hashlib
+import urllib3
 
 # Signature version '4' algorithm.
 _SIGN_V4_ALGORITHM = "AWS4-HMAC-SHA256"
 
 MINIO_HTTP_PREFIX = "https://" if MINIO_SSL else "http://"
+
+http_client=urllib3.PoolManager(
+        cert_reqs='CERT_NONE'
+)
 
 minioClient = Minio(
     MINIO_SERVER,
@@ -49,6 +54,7 @@ minioClient = Minio(
     access_key=os.environ.get("MINIO_ACCESS_KEY"),
     secret_key=os.environ.get("MINIO_SECRET_KEY"),
     secure=MINIO_SSL,
+    http_client=http_client,
 )
 
 minioExternalClient = Minio(
@@ -57,6 +63,7 @@ minioExternalClient = Minio(
     access_key=os.environ.get("MINIO_ACCESS_KEY"),
     secret_key=os.environ.get("MINIO_SECRET_KEY"),
     secure=MINIO_SSL,
+    http_client=http_client,
 )
 
 if not minioClient.bucket_exists(MINIO_BUCKET):
